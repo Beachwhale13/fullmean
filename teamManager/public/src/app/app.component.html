@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="page-header">
+    <h3><a [routerLink]="['/players','list']">Manage Players</a>&nbsp;|&nbsp;
+    <a [routerLink]="['/status','game', '1']">Manage Player Status</a></h3>
+  </div>
+
+  <div style="border: 2px black solid; margin-top: 5em; padding: 2em;">
+    <router-outlet></router-outlet>
+  </div>
+</div>

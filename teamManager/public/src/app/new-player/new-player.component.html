@@ -1,0 +1,18 @@
+<div class='page-header'>
+  <h3><a [routerLink]="['/players','list']">List</a>&nbsp;|&nbsp;
+  <a [routerLink]="['/players','addplayer']">Add Player</a></h3>
+</div>
+<div style="border: 1px black solid; padding: 1em;">
+  <h3>Add Player</h3>
+  <form #playerForm="ngForm" (ngSubmit)="onSubmit(); playerForm.reset()">
+    <label for="name">Player Name:</label>
+    <input class="form-control" type="text" name="name" required minlength="2" [(ngModel)]="newPlayer.name" #name="ngModel"/>
+    <p *ngIf="name.dirty && name.errors" style="color: red">Name needs to be at least 3 characters long</p>
+    <p *ngIf="name.invalid && (name.dirty || name.touched)" style="color: red">Name is required</p>
+    <label for="position"> Preferred Position: </label>
+    <input class="form-control" type="text" name="position" [(ngModel)]="newPlayer.position" #position="ngModel"/>
+    <button style="margin-top: .25em" class="btn btn-sm btn-success pull-right" type="submit" [disabled]=playerForm.invalid>ADD</button>
+    <br>
+    <br>
+  </form>
+</div>

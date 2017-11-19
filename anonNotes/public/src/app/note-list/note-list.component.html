@@ -1,0 +1,4 @@
+<div *ngFor="let note of notes" style="border: 1px black solid; padding: .5em; margin-bottom: 1em;">
+  <p class="text-right">Noted on: {{note.createdAt | date: 'medium'}}</p>
+  <p>{{note.note}}</p>
+</div>

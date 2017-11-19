@@ -1,0 +1,98 @@
+<h1>Player Status - Game {{gId}}</h1>
+<div class="text-center">
+  <h3><a [routerLink]="['/status','game', '1']">Game 1</a>&nbsp;|&nbsp;
+  <a [routerLink]="['/status','game', '2']">Game 2</a>&nbsp;|&nbsp;
+  <a [routerLink]="['/status','game', '3']">Game 3</a></h3>
+</div>
+<div *ngIf="gId == 1">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players">
+        <td><a href="{{player.id}}">{{player.name}}</a></td>
+        <td *ngIf="player.game1 == 'NP'">
+          <button class="btn btn-default" (click)="changeToPlay(player._id)">Playing</button>
+          <button class="btn btn-danger">Not Playing</button>
+          <button class="btn btn-default" (click)="changeToUndecided(player._id)">Undecided</button>
+        </td>
+        <td *ngIf="player.game1 == 'U'">
+          <button class="btn btn-default" (click)="changeToPlay(player._id)">Playing</button>
+          <button class="btn btn-default" (click)="changeToNotPlay(player._id)">Not Playing</button>
+          <button class="btn btn-warning">Undecided</button>
+        </td>
+        <td *ngIf="player.game1 == 'P'">
+          <button class="btn btn-success">Playing</button>
+          <button class="btn btn-default" (click)="changeToNotPlay(player._id)">Not Playing</button>
+          <button class="btn btn-default" (click)="changeToUndecided(player._id)">Undecided</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="gId == 2">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players">
+        <td><a href="{{player.id}}">{{player.name}}</a></td>
+        <td *ngIf="player.game2 == 'NP'">
+          <button class="btn btn-default" (click)="changeToPlay(player._id)">Playing</button>
+          <button class="btn btn-danger">Not Playing</button>
+          <button class="btn btn-default" (click)="changeToUndecided(player._id)">Undecided</button>
+        </td>
+        <td *ngIf="player.game2 == 'U'">
+          <button class="btn btn-default" (click)="changeToPlay(player._id)">Playing</button>
+          <button class="btn btn-default" (click)="changeToNotPlay(player._id)">Not Playing</button>
+          <button class="btn btn-warning">Undecided</button>
+        </td>
+        <td *ngIf="player.game2 == 'P'">
+          <button class="btn btn-success">Playing</button>
+          <button class="btn btn-default" (click)="changeToNotPlay(player._id)">Not Playing</button>
+          <button class="btn btn-default" (click)="changeToUndecided(player._id)">Undecided</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="gId == 3">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let player of players">
+        <td><a href="{{player.id}}">{{player.name}}</a></td>
+        <td *ngIf="player.game3 == 'NP'">
+          <button class="btn btn-default" (click)="changeToPlay(player._id)">Playing</button>
+          <button class="btn btn-danger">Not Playing</button>
+          <button class="btn btn-default" (click)="changeToUndecided(player._id)">Undecided</button>
+        </td>
+        <td *ngIf="player.game3 == 'U'">
+          <button class="btn btn-default" (click)="changeToPlay(player._id)">Playing</button>
+          <button class="btn btn-default" (click)="changeToNotPlay(player._id)">Not Playing</button>
+          <button class="btn btn-warning">Undecided</button>
+        </td>
+        <td *ngIf="player.game3 == 'P'">
+          <button class="btn btn-success">Playing</button>
+          <button class="btn btn-default" (click)="changeToNotPlay(player._id)">Not Playing</button>
+          <button class="btn btn-default" (click)="changeToUndecided(player._id)">Undecided</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
